@@ -1,0 +1,15 @@
+<div class="flex items-center w-full md:w-1/2 p-4">
+    {{ project_images limit="5" as="images" }}
+        <div class="grid grid-cols-1 gap-4">
+            <div>
+                <img class="w-full h-64 object-cover" src="{{ glide :src="images.0" width="800" height="400" }}" alt="{{ images.0.alt /}}">
+            </div>
+
+            <div class="grid grid-cols-4 gap-4">
+                {{ images | offset(1) }}
+                <img class="w-full h-32 object-cover" src="{{ glide :src="url" width="150" height="150" }}" alt="{{ alt }}">
+                {{ /images }}
+            </div>
+        </div>
+    {{ /project_images }}
+</div>

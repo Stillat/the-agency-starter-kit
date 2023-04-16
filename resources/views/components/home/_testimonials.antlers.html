@@ -1,0 +1,30 @@
+<section class="mb-12">
+    <div class="container max-w-6xl mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:-ml-6 md:-mr-6">
+            {{ if display_blurb }}
+                <div class="rounded-lg shadow-subtle p-16 bg-slate-800 text-white row-span-2 relative">
+                    <p class="text-3xl font-thin">{{ blurb_title }}</p>
+                    <div class="flex items-center">
+                        <p class="text-lg font-thin mt-4">{{ blurb_content }}</p>
+                    </div>
+                    {{ svg src="svg/arrow-down-right" class="h-7 w-7 stroke-white absolute bottom-5 right-4 md:right-5 rotate-45 md:rotate-0" /}}
+                    <div class="w-8 h-8 absolute rounded-full bg-white opacity-20 bottom-3 right-3"></div>
+                </div>
+            {{ /if }}
+            {{ collection:testimonials :limit="number_of_testimonials ?? 6" }}
+                <div class="rounded-lg border border-slate-100 shadow-subtle p-6 bg-white">
+                    <p class="text-gray-600 mb-4">{{ content | raw | safe_truncate(210, '...') }}</p>
+                    <div class="flex items-center">
+                        <img src="{{ glide :src="customer_logo" width="50" height="50" /}}" class="w-12 h-12 rounded-full mr-4" />
+                        <div>
+                            <h3 class="text-gray-800 font-semibold">{{ customer_name }}</h3>
+                            {{ if business_name }}
+                                <p class="text-gray-600">{{ business_name }}</p>
+                            {{ /if }}
+                        </div>
+                    </div>
+                </div>
+            {{ /collection:testimonials }}
+        </div>
+    </div>
+</section>

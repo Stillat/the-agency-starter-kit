@@ -1,0 +1,9 @@
+<div class="w-full md:w-1/2 p-6">
+    {{ partial src="components/heading" class="text-2xl" }}
+        <a href="{{ url }}">{{ title }}</a>
+    {{ /partial }}
+
+    <div class="prose">
+        {{ content | excerpt('[more]') }}
+    </div>
+</div>

@@ -1,0 +1,19 @@
+{{ layout:layouts/large-header /}}
+
+{{ layout:share show_marketing_header="true"
+                :marketing_header_title="title"
+                :marketing_header_content="project_brief"
+                marketing_svg_name="project_complete_lwss"
+/}}
+
+<div class="container max-w-6xl mx-auto mb-6">
+    <div class="flex flex-wrap">
+        <div class="w-full md:w-1/2 p-6">
+            {{ partial:components/heading heading="{trans:site.the_process}" class="text-2xl" /}}
+            <div class="prose">
+                {{ content | replace('[more]', '') }}
+            </div>
+        </div>
+        {{ partial:components/projects/gallery /}}
+    </div>
+</div>

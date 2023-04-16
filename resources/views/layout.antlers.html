@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="{{ site:short_locale }}">
+    <head>
+        {{ partial:components/site/head /}}
+        {{ yield:meta_tags /}}
+    </head>
+    <body class="bg-white font-sans leading-normal text-gray-800 scroll-smooth">
+        <header class="{{ if current_template == 'errors.404' }}bg-white{{ /if }} border-b border-slate-200 py-6 px-6 mb-6">
+            {{ partial:components/nav/main /}}
+        </header>
+
+        <div class="flex flex-col sm:flex-grow min-h-screen">
+            <div class="flex-1">
+                {{ template_content }}
+            </div>
+
+            {{ partial:components/site/footer /}}
+        </div>
+
+        {{ partial:components/site/scripts /}}
+    </body>
+</html>

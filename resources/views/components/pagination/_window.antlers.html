@@ -1,0 +1,42 @@
+<div class="flex items-center justify-center space-x-2">
+    {{ if prev_page }}
+        <a href="prev_page" class="bg-gray-100 hover:bg-gray-200 text-gray-800 font-semibold py-2 px-4 rounded-l">{{ trans:pagination.previous }}</a>
+    {{ /if }}
+    {{ links:segments }}
+        {{ first }}
+            <a href="{{ url }}" class="{{ if page == current_page }}bg-indigo-100{{ else }}bg-gray-100{{ /if }} hover:bg-gray-200 text-gray-800 font-semibold py-2 px-4">{{ page }}</a>
+        {{ /first }}
+        {{ if slider }}
+            <span class="bg-gray-100 text-gray-800 font-semibold py-2 px-4">...</span>
+        {{ /if }}
+        {{ slider }}
+            <a href="{{ url }}" class="{{ if page == current_page }}bg-indigo-100{{ else }}bg-gray-100{{ /if }} hover:bg-gray-200 text-gray-800 font-semibold py-2 px-4">{{ page }}</a>
+        {{ /slider }}
+        {{ if slider || (!slider && last) }}
+            <span class="bg-gray-100 text-gray-800 font-semibold py-2 px-4">...</span>
+        {{ /if }}
+        {{ last }}
+            <a href="{{ url }}" class="{{ if page == current_page }}bg-indigo-100{{ else }}bg-gray-100{{ /if }} hover:bg-gray-200 text-gray-800 font-semibold py-2 px-4">{{ page }}</a>
+        {{ /last }}
+    {{ /links:segments }}
+    {{ if next_page }}
+        <a href="{{ next_page }}" class="bg-gray-100 hover:bg-gray-200 text-gray-800 font-semibold py-2 px-4 rounded-r">{{ trans:pagination.next }}</a>
+    {{ /if }}
+</div>
+
+{{#
+    Adds some extra META tags
+    based on the current
+    pagination details.
+#}}
+{{ section:meta_tags }}
+    <link rel="canonical" href="{{ current_url }}">
+
+    {{ if prev_page }}
+        <meta name="prev" content="{{ prev_page }}">
+    {{ /if }}
+
+    {{ if next_page }}
+        <meta name="next" content="{{ next_page }}">
+    {{ /if }}
+{{ /section:meta_tags }}

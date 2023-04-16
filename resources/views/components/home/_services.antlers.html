@@ -1,0 +1,37 @@
+<section class="mb-12" data-service-list>
+    <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-2">
+            <div class="md:col-span-2 flex items-center justify-center py-0 pb-6 md:pb-12 md:py-12 px-6">
+                <div class="space-y-6">
+                    {{ services }}
+                        {{ if first }}
+                            {{ section:default_service_stat }}{{ service_stat_percent }}{{ /section:default_service_stat }}
+                            {{ section:default_service_blurb }}{{ service_stat_blurb }}{{ /section:default_service_blurb }}
+                        {{ /if }}
+                        <div class="bg-white border border-slate-100 hover:bg-gray-50 shadow-subtle hover:shadow-lg transition-all duration-150 rounded-lg p-8 flex items-start space-x-8"
+                             data-service="{{ id }}"
+                             data-service-stat="{{ service_stat_percent }}"
+                             data-service-blurb="{{ service_stat_blurb | entities }}">
+                            <div class="w-16 h-16 flex items-center justify-center text-2xl relative">
+                                {{ svg :src="service_icon" class="relative" style="z-index:1" /}}
+                                <div class="w-8 h-8 absolute rounded-full bg-pink-100 bottom-1 -right-2"></div>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-800 mb-4">{{ title }}</h3>
+                                <p class="text-gray-600">{{ marketing_blurb }}</p>
+                            </div>
+                        </div>
+                    {{ /services }}
+                </div>
+            </div>
+            <div class="relative rounded-lg py-16 flex flex-col items-center justify-center shadow-subtle bg-yellow-100 text-center md:text-left mx-6 md:mx-0">
+                <h2 class="text-6xl font-bold text-gray-700" data-service-stat-target>{{ yield:default_service_stat /}}%</h2>
+                <p class="text-xl text-gray-700 text-center mt-4 px-16" data-service-blurb-target>
+                    {{ yield:default_service_blurb /}}
+                </p>
+
+                {{ svg src="svg/patterns/two.svg" class="absolute bottom-0 left-4 hidden md:block" style="width: 150px;height: 300px;opacity: 0.7;z-index:0" }}
+            </div>
+        </div>
+    </div>
+</section>

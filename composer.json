@@ -1,0 +1,9 @@
+{
+    "name": "my-vendor-name/agency-starter-kit",
+    "extra": {
+        "statamic": {
+            "name": "Agency Starter Kit",
+            "description": "Agency Starter Kit starter kit"
+        }
+    }
+}

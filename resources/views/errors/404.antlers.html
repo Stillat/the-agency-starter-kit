@@ -1,0 +1,49 @@
+---
+colors:
+  - bg-red-50
+  - bg-blue-50
+  - bg-green-50
+  - bg-yellow-50
+  - bg-purple-50
+  - bg-indigo-50
+  - bg-pink-50
+  - bg-teal-50
+  - bg-orange-50
+  - bg-red-50
+  - bg-pink-200
+---
+<style>
+    .rain {
+        background: url("{{ link to='drop.svg' /}}");
+    }
+</style>
+
+<div class="grid grid-cols-10 grid-rows-20 gap-1 bg-gray-50 h-screen z-[-10] absolute right-0 left-0 top-0 bottom-0">
+    {{ random_once :choices="view.colors" }}
+        <div class="rounded-md {{ random_once:next /}} col-span-4 row-span-4"></div>
+        <div class="rounded-md {{ random_once:next /}} col-span-2 row-span-2"></div>
+        <div id="rain-trigger" class="rounded-md {{ random_once:next /}} col-span-1 row-span-1"></div>
+        <div class="rounded-md {{ random_once:next /}} col-span-3 row-span-1"></div>
+        <div class="rounded-md {{ random_once:next /}} col-span-1 row-span-3"></div>
+        <div class="rounded-md {{ random_once:next /}} col-span-2 row-span-1"></div>
+        <div class="rounded-md {{ random_once:next /}} col-span-2 row-span-2"></div>
+        <div class="rounded-md {{ random_once:next /}} col-span-1 row-span-1"></div>
+        <div class="rounded-md {{ random_once:next /}} col-span-1 row-span-1"></div>
+        <div class="rounded-md {{ random_once:next /}} col-span-2 row-span-2"></div>
+        <div class="rounded-md {{ random_once:next /}} col-span-1 row-span-1"></div>
+    {{ /random_once }}
+</div>
+
+<div id="rain-container" class="absolute w-full h-screen pointer-events-none overflow-hidden"></div>
+ 
+<div class="container max-w-prose mx-auto">
+    <div>
+        <div class="flex items-center justify-center">
+            {{ svg src="svg/undraw/road_sign.svg" class="py-10" /}}
+        </div>
+        <div class="flex items-center justify-center py-12 mb-10">
+            <h2 class="text-4xl font-thin p-5">{{ trans:site.404_text }}</h2>
+        </div>
+    </div>
+
+</div>

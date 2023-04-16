@@ -1,0 +1,7 @@
+{{ view }}
+    <div>
+        <label for="{{ field_name }}" class="block text-sm font-medium">{{ field_display }}</label>
+        <textarea id="{{ field_name }}" name="{{ field_name }}" rows="4" class="w-full p-2 border border-gray-300 rounded" required>{{ old[field_name] /}}</textarea>
+        {{ partial:components/forms/error_message :field="field_name" /}}
+    </div>
+{{ /view }}

@@ -1,0 +1,6 @@
+title: 'Project Requests'
+revisions: false
+order_by: 'submitted_on:desc'
+date_behavior:
+  past: public
+  future: private

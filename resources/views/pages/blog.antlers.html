@@ -1,0 +1,43 @@
+{{# Change the Antlers layout we will usee. #}}
+{{ layout:layouts/large-header /}}
+{{#
+    We could accomplish this using sections
+    or by adding some logic to the layout.
+    However, we will use our custom
+    layout:share tag as an example
+    of pushing variables to our layout file.
+#}}
+{{ if get:page == null || get:page < 2 }}
+    {{ layout:share show_marketing_header="true"
+                    :marketing_header_title="title"
+                    :marketing_header_content="heading_blurb"
+                    marketing_svg_name="typewriter"
+                    marketing_header_background="bg-indigo-100" /}}
+{{ else }}
+    {{ layout:share marketing_header_background="bg-indigo-100" /}}
+{{ /if }}
+
+<div class="container mb-6 max-w-prose mx-auto">
+    <div class="space-y-8 mb-6">
+        {{ collection:blog sort="date:desc" paginate="3" as="posts" }}
+            {{ posts }}
+            <div class="rounded-lg shadow-subtle border border-slate-100 p-8 hover:bg-gray-50 hover:shadow-lg transition-all duration-150">
+                {{ partial src="components/heading" class="text-2xl" border="border-blue-100" }}
+                    <a href="{{ url }}">{{ title }}</a>
+                {{ /partial }}
+
+                <p class="text-sm text-gray-600 mb-2">{{ trans_replace:site.posted_on published_date="{date|iso_format('LL')}" }}</p>
+                <p class="text-gray-700">{{ meta_description }}</p>
+            </div>
+            {{ /posts }}
+            {{ paginate }}
+                {{ section:pagination_section }}
+                    {{ partial:components/pagination/window /}}
+                {{ /section:pagination_section }}
+            {{ /paginate }}
+        {{ /collection:blog }}
+    </div>
+    <div class="pt-6">
+        {{ yield:pagination_section /}}
+    </div>
+</div>

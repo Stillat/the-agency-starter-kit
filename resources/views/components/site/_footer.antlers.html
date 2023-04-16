@@ -1,0 +1,39 @@
+<footer class="mb-6">
+    {{ site_settings }}
+        <div class="container max-w-6xl bg-slate-100 px-6 py-16 pb-8 rounded-lg mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div class="space-y-4">
+                    <h3 class="text-lg font-semibold">
+                        <a href="{{ homepage }}" class="font-bold text-xl text-gray-800">
+                            {{ svg src="svg/logo.svg" class="w-7 h-7 mr-2 inline" /}}
+                            {{ site_settings:site_name /}}
+                        </a>
+                    </h3>
+                    <div class="prose">{{ about_us_content /}}</div>
+                </div>
+                <div class="space-y-4">
+                    <h3 class="text-lg font-semibold">{{ trans:site.footer.contact_information }}</h3>
+                    <ul>
+                        {{ contact_information }}
+                            <li><strong>{{ label }}</strong>: {{ contact_value }}</li>
+                        {{ /contact_information }}
+                    </ul>
+                </div>
+                <div class="space-y-4">
+                    <h3 class="text-lg font-semibold">{{ trans:site.footer.follow_us }}</h3>
+
+                    <div class="flex items-center">
+                        {{ social_media_profiles }}
+                            <a href="{{ profile_url }}" class="mr-4" rel="nofollow" title="{{ profile_name }}">
+                                {{ svg :src="profile_image" class="w-6 h-6" /}}
+                            </a>
+                        {{ /social_media_profiles }}
+                    </div>
+                </div>
+            </div>
+            <div class="text-center pt-8 text-slate-500">
+                <p>&copy; {{ now | format('Y') }} {{ site_name /}}. {{ trans:site.footer.all_rights_reserved }}</p>
+            </div>
+        </div>
+    {{ /site_settings }}
+</footer>

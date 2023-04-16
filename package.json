@@ -1,0 +1,31 @@
+{
+    "private": true,
+    "scripts": {
+        "dev": "mix",
+        "development": "mix",
+        "watch": "mix watch",
+        "watch-poll": "mix watch -- --watch-options-poll=1000",
+        "hot": "mix watch --hot",
+        "prod": "npm run production",
+        "production": "mix --production"
+    },
+    "devDependencies": {
+        "@tailwindcss/typography": "^0.5.1",
+        "autoprefixer": "^10.4.0",
+        "browser-sync": "^2.29.1",
+        "browser-sync-webpack-plugin": "^2.3.0",
+        "commander": "^7.2.0",
+        "cross-env": "^7.0",
+        "css-loader": "^5.2.7",
+        "laravel-mix": "^6.0",
+        "postcss": "^8.4.5",
+        "postcss-import": "^14.0.1",
+        "tailwindcss": "^3.0.19",
+        "vue-loader": "^15.4.2",
+        "vue-template-compiler": "^2.6.11"
+    },
+    "dependencies": {
+        "vue": "^2.6.11",
+        "vuedraggable": "2.23.2"
+    }
+}

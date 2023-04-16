@@ -1,0 +1,19 @@
+<section class="mb-12">
+    <div class="relative max-w-6xl
+                flex flex-col text-center items-center
+                justify-center shadow-subtle rounded-lg bg-pink-100
+                mx-6 md:mx-auto
+                py-8 md:py-32 px-6">
+        <h1 class="text-4xl md:text-7xl font-light text-gray-800 mb-8">{{ hero_title }}</h1>
+        {{ if hero_blurb }}
+            <p class="text-gray-600 text-xl mb-8 max-w-[65%]">{{ hero_blurb }}</p>
+        {{ /if }}
+        {{ if cta_title }}
+            <a href="{{ cta_target }}" class="shadow-btn border-2 border-slate-800 text-slate-800 py-3 px-6 rounded-md font-semibold hover:bg-accent-color hover:font-semibold">
+                {{ cta_title }}
+            </a>
+        {{ /if }}
+
+        {{ svg src="svg/patterns/one.svg" class="absolute bottom-0 right-4 hidden md:block" style="width: 150px;height: 300px;opacity: 0.4;z-index:0" }}
+    </div>
+</section>

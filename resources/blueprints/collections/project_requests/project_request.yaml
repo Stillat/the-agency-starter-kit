@@ -1,0 +1,190 @@
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: title
+        field:
+          type: text
+          required: true
+          validate:
+            - required
+      -
+        handle: project_contact_details
+        field:
+          display: 'Contact Details'
+          type: section
+          icon: section
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+      -
+        handle: business_name
+        field:
+          input_type: text
+          antlers: false
+          display: 'Business Name'
+          type: text
+          icon: text
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          validate:
+            - required
+      -
+        handle: contact_name
+        field:
+          input_type: text
+          antlers: false
+          display: 'Contact Name'
+          type: text
+          icon: text
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          validate:
+            - required
+      -
+        handle: email_address
+        field:
+          input_type: text
+          antlers: false
+          display: 'Email Address'
+          type: text
+          icon: text
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          validate:
+            - required
+            - email
+      -
+        handle: phone_number
+        field:
+          input_type: text
+          antlers: false
+          display: 'Phone Number'
+          type: text
+          icon: text
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+      -
+        handle: project_details
+        field:
+          display: 'Project Details'
+          type: section
+          icon: section
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+      -
+        handle: project_type
+        field:
+          options:
+            '': 'Select a project type'
+            web_design: 'Web Design'
+            graphic_design: 'Graphic Design'
+            digital_marketing: 'Digital Marketing'
+            seo: SEO
+            app_development: 'App Development'
+            other: Other
+          multiple: false
+          max_items: 1
+          clearable: false
+          searchable: true
+          taggable: false
+          push_tags: false
+          cast_booleans: false
+          display: 'Project Type'
+          type: select
+          icon: select
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          validate:
+            - required
+      -
+        handle: budget_range
+        field:
+          options:
+            'null': 'Select a budget range'
+            under_5000: 'Under $5,000'
+            5000_to_10000: '$5,000 - $10,000'
+            10000_to_20000: '$10,000 - $20,000'
+            20000_to_50000: '$20,000 - $50,000'
+            50000_and_above: '$50,000 and above'
+          multiple: false
+          max_items: 1
+          clearable: false
+          searchable: true
+          taggable: false
+          push_tags: false
+          cast_booleans: false
+          display: 'Budget Range'
+          type: select
+          icon: select
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          validate:
+            - required
+      -
+        handle: additional_information
+        field:
+          antlers: false
+          display: 'Additional Information'
+          type: textarea
+          icon: textarea
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          validate:
+            - required
+            - 'max:15000'
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: slug
+        field:
+          type: slug
+          localizable: true
+      -
+        handle: project_status
+        field:
+          options:
+            submitted: Submitted
+            in_review: 'In Review'
+            in_process: 'In Process'
+            completed: Completed
+          multiple: false
+          clearable: false
+          searchable: true
+          taggable: false
+          push_tags: false
+          cast_booleans: false
+          default: submitted
+          display: 'Project Status'
+          type: select
+          icon: select
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+      -
+        handle: submitted_on
+        field:
+          mode: single
+          time_enabled: true
+          time_seconds_enabled: false
+          full_width: false
+          inline: false
+          columns: 1
+          rows: 1
+          display: 'Submitted On'
+          type: date
+          icon: date
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+title: 'Project Request'

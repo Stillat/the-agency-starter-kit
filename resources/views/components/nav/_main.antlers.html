@@ -1,0 +1,39 @@
+{{#
+    Because the nav's inner content is the same
+    for all viewport sizes, we can use the
+    capture Tag to only render it once :)    
+#}}
+{{ capture:menu }}
+    {{ nav:main }}
+        <li><a href="{{ url }}" class="text-gray-900 {{ if is_current || is_parent }}font-semibold{{ /if }} hover:text-gray-800">{{ title }}</a></li>
+    {{ /nav:main }}
+{{ /capture:menu }}
+
+<div class="container max-w-6xl mx-auto flex justify-between items-center">
+    <a href="{{ homepage }}" class="font-bold text-xl text-gray-800">
+        {{ svg src="svg/logo.svg" class="w-7 h-7 mr-2 inline" /}}
+        {{ site_settings:site_name /}}
+    </a>
+    <nav class="hidden md:flex">
+        <ul class="flex space-x-6">
+            {{ capture:menu /}}
+        </ul>
+    </nav>
+    <button id="nav-toggle" type="button" class="md:hidden text-slate-800">
+        {{ svg src="svg/menu" class="h-6 w-6" /}}
+    </button>
+    <a href="{{ link to='contact' }}" class="hidden md:flex shadow-btn border-2
+                                             border-slate-800 text-slate-800 py-3
+                                             px-6 rounded-md font-semibold {{ if segment_1 == 'buzz-words' }}hover:bg-accent-color-blue{{ else }}hover:bg-accent-color{{ /if }}
+                                             hover:font-semibold">
+        {{ trans:site.get_started }}
+    </a>
+</div>
+<div class="hidden pt-4 text-slate-400" id="responsive-nav">
+    <div class="flex justify-start items-center">
+        <ul class="w-full text-center space-y-2">
+            {{ capture:menu /}}
+            <li><a href="{{ link to='contact' }}" class="text-gray-900 {{ if is_current || is_parent }}font-semibold{{ /if }} hover:text-gray-800">{{ trans:site.get_started }}</a></li>
+        </ul>
+    </div>
+</div>

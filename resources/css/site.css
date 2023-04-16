@@ -1,0 +1,62 @@
+/* This is all you. */
+
+@layer components {
+    .prose td p,
+    .prose th p {
+        @apply mt-1 mb-1;
+    }
+}
+
+.rain {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    animation: fall 1s ease-out infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(5000%);
+    }
+}
+
+.slider::-webkit-slider-thumb {
+    width: 15px;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 15px;
+    cursor: ew-resize;
+    background: #fff;
+    box-shadow: -405px 0 0 400px var(--color-pink-500);
+    border-radius: 50%;
+    border: 1px solid var(--color-pink-400);
+}
+
+.shadow-btn {
+    position: relative;
+    z-index: 10;
+}
+
+.shadow-btn::before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: inherit;
+    border-radius: inherit;
+    opacity: 0;
+    transition: all 0.15s ease-in-out;
+}
+
+.shadow-btn:hover::before {
+    bottom: -10px;
+    right: -10px;
+    opacity: 0.3;
+    z-index: -1;
+}

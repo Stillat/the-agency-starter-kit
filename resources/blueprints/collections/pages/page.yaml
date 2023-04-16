@@ -1,0 +1,30 @@
+sections:
+  main:
+    fields:
+      -
+        handle: title
+        field:
+          type: text
+          required: true
+      -
+        handle: content
+        field:
+          type: markdown
+          localizable: true
+  sidebar:
+    fields:
+      -
+        handle: slug
+        field:
+          type: slug
+          localizable: true
+      -
+        handle: parent
+        field:
+          type: entries
+          collections:
+            - pages
+          max_items: 1
+          listable: false
+          localizable: true
+title: Page

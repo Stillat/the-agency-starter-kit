@@ -1,0 +1,29 @@
+{{# Change the Antlers layout we will usee. #}}
+{{ layout:layouts/large-header /}}
+{{#
+    We could accomplish this using sections
+    or by adding some logic to the layout.
+    However, we will use our custom
+    layout:share tag as an example
+    of pushing variables to our layout file.
+#}}
+{{ layout:share show_marketing_header="true"
+                :marketing_header_title="heading_title"
+                :marketing_header_content="heading_blurb"
+                marketing_svg_name="solution_mindset"
+/}}
+<div class="container max-w-6xl mx-auto mb-6">
+    {{ collection:portfolio limit="3" order="random" }}
+        {{ unless index % 2 }}
+        <div class="flex flex-wrap mb-12 rounded-lg shadow-subtle border border-slate-100 py-8">
+            {{ partial:components/projects/content /}}
+            {{ partial:components/projects/gallery /}}
+        </div>
+        {{ else }}
+        <div class="order-last md:order-first flex flex-wrap mb-12 rounded-lg shadow-subtle border border-slate-100">
+            {{ partial:components/projects/gallery /}}
+            {{ partial:components/projects/content /}}
+        </div>
+        {{ /unless }}
+    {{ /collection:portfolio }}
+</div>

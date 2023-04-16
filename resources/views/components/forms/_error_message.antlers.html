@@ -1,0 +1,9 @@
+{{ view }}
+    {{ get_errors:{field} }}
+        <p class="text-red-600">
+            {{ messages }}
+                {{ message }}
+            {{ /messages }}
+        </p>
+    {{ /get_errors:{field} }}
+{{ /view }}

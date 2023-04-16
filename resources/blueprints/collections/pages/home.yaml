@@ -1,0 +1,155 @@
+title: Home
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: title
+        field:
+          type: text
+          required: true
+          validate:
+            - required
+      -
+        handle: content
+        field:
+          collapse: false
+          previews: true
+          sets:
+            hero:
+              display: Hero
+              fields:
+                -
+                  handle: hero_title
+                  field:
+                    input_type: text
+                    antlers: false
+                    display: 'Hero Title'
+                    type: text
+                    icon: text
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                -
+                  handle: hero_blurb
+                  field:
+                    antlers: false
+                    display: 'Hero Blurb'
+                    type: textarea
+                    icon: textarea
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                -
+                  handle: cta_title
+                  field:
+                    input_type: text
+                    antlers: false
+                    display: 'CTA Title'
+                    type: text
+                    icon: text
+                    width: 50
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                -
+                  handle: cta_target
+                  field:
+                    display: 'CTA Target'
+                    type: link
+                    icon: link
+                    width: 50
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+            testimonials:
+              display: Testimonials
+              fields:
+                -
+                  handle: number_of_testimonials
+                  field:
+                    default: '6'
+                    display: 'Number of Testimonials'
+                    type: integer
+                    icon: integer
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                -
+                  handle: display_blurb
+                  field:
+                    default: false
+                    display: 'Display Blurb'
+                    type: toggle
+                    icon: toggle
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    always_save: true
+                -
+                  handle: blurb_title
+                  field:
+                    input_type: text
+                    antlers: false
+                    display: 'Blurb Title'
+                    type: text
+                    icon: text
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    if:
+                      display_blurb: 'equals true'
+                    always_save: true
+                -
+                  handle: blurb_content
+                  field:
+                    antlers: false
+                    display: 'Blurb Content'
+                    type: textarea
+                    icon: textarea
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    if:
+                      display_blurb: 'equals true'
+                    always_save: true
+            services:
+              display: Services
+              fields:
+                -
+                  handle: services
+                  field:
+                    max_items: 5
+                    mode: default
+                    create: true
+                    collections:
+                      - services
+                    display: Services
+                    type: entries
+                    icon: entries
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+          display: Content
+          type: replicator
+          icon: replicator
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: slug
+        field:
+          type: slug
+          localizable: true
+      -
+        handle: parent
+        field:
+          type: entries
+          collections:
+            - pages
+          max_items: 1
+          listable: false
+          localizable: true

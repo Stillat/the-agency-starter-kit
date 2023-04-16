@@ -1,0 +1,146 @@
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: site_name
+        field:
+          input_type: text
+          antlers: false
+          display: 'Site Name'
+          type: text
+          icon: text
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+  footer:
+    display: Footer
+    fields:
+      -
+        handle: about_us_content
+        field:
+          collapse: false
+          always_show_set_button: false
+          previews: true
+          smart_typography: false
+          buttons:
+            - bold
+            - italic
+            - removeformat
+            - anchor
+          save_html: false
+          inline: false
+          toolbar_mode: fixed
+          link_noopener: false
+          link_noreferrer: false
+          target_blank: false
+          reading_time: false
+          fullscreen: true
+          allow_source: true
+          enable_input_rules: true
+          enable_paste_rules: true
+          antlers: false
+          remove_empty_nodes: false
+          display: 'About Us'
+          type: bard
+          icon: bard
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+      -
+        handle: contact_information
+        field:
+          fields:
+            -
+              handle: label
+              field:
+                input_type: text
+                antlers: false
+                display: Label
+                type: text
+                icon: text
+                width: 33
+                listable: hidden
+                instructions_position: above
+                visibility: visible
+            -
+              handle: contact_value
+              field:
+                input_type: text
+                antlers: false
+                display: Value
+                type: text
+                icon: text
+                width: 66
+                listable: hidden
+                instructions_position: above
+                visibility: visible
+          mode: table
+          reorderable: true
+          display: 'Contact Information'
+          type: grid
+          icon: grid
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+  social_media_profiles:
+    display: 'Social Media Profiles'
+    fields:
+      -
+        handle: social_media_profiles
+        field:
+          fields:
+            -
+              handle: profile_image
+              field:
+                mode: list
+                container: assets
+                folder: social_icons
+                restrict: false
+                allow_uploads: true
+                show_filename: true
+                max_files: 1
+                display: 'Profile Image'
+                type: assets
+                icon: assets
+                listable: hidden
+                instructions_position: above
+                visibility: visible
+                width: 33
+            -
+              handle: profile_name
+              field:
+                input_type: text
+                antlers: false
+                display: 'Profile Name'
+                type: text
+                icon: text
+                listable: hidden
+                instructions_position: above
+                visibility: visible
+                validate:
+                  - required
+                width: 33
+            -
+              handle: profile_url
+              field:
+                input_type: text
+                antlers: false
+                display: 'Profile URL'
+                type: text
+                icon: text
+                width: 33
+                listable: hidden
+                instructions_position: above
+                visibility: visible
+                validate:
+                  - required
+                  - url
+          mode: table
+          reorderable: true
+          display: 'Social Media Profiles'
+          type: grid
+          icon: grid
+          listable: hidden
+          instructions_position: above
+          visibility: visible

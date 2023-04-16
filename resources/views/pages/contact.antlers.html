@@ -1,0 +1,102 @@
+---
+svg_icons:
+  web_design: 'layout'
+  graphic_design: 'pen-tool'
+  digital_marketing: 'pie-chart'
+  seo: 'search'
+  app_development: 'smartphone'
+  other: 'box'
+---
+
+<div class="container max-w-3xl mx-auto mb-6">
+    <div class="mb-4 px-4">
+        {{ partial:components/heading :heading="heading_title" class="text-4xl" /}}
+        <div class="prose">{{ content }}</div>
+    </div>
+
+    <div>
+        {{#
+            The items passed to Laravel's redirect()->back(...)
+            will be available to us through the session Tag.
+        #}}
+        {{ if {session:success} }}
+            <div class="mx-4 bg-green-100 mb-4 border border-green-400 text-green-700 px-6 py-3 rounded relative" role="alert">
+                <strong class="font-semibold">{{ trans:forms.project_request.success_title }}</strong>
+                <span class="block sm:inline">{{ trans:forms.project_request.success_message }}</span>
+            </div>
+        {{ /if }}
+
+        <form method="POST" action="{{ route:project-request }}" id="projectRequestForm">
+            {{ csrf_field }}
+            <div class="p-6">
+                <h3 class="text-2xl font-thin mb-5">{{ trans:forms.project_request.sections.project }}</h3>
+
+                {{ get_blueprint handle="collections/project_requests/project_request" }}
+                    <script>
+                        window._budgetRanges = JSON.parse('{{ fields.budget_range.options | to_list | to_json /}}');
+                    </script>
+
+                    <div class="hidden md:grid grid-cols-3 md:grid-cols-6 gap-4 mb-12" aria-hidden="true">
+                        {{ foreach :array="fields.project_type.options" }}
+                            {{ unless first }}
+                                <button type="button" data-project-type data-value="{{ key }}"
+                                        class="{{ if index == 1 }}bg-gray-50 shadow-subtle{{ else }}shadow-sm{{ /if }} border
+                                               border-slate-100 hover:bg-gray-50 hover:shadow-lg flex flex-col items-center
+                                               justify-center py-2 px-4 rounded-md text-sm font-medium transition-all duration-150">
+                                    <div class="w-16 h-16 flex items-center justify-center text-2xl relative">
+                                        {{ svg src="svg/{view.svg_icons.{key}}.svg" class="w-7 h-7 mb-2" style="z-index:1" /}}
+                                        <div class="w-6 h-6 absolute rounded-full bg-pink-100 bottom-3 right-3"></div>
+                                    </div>
+                                    {{ value }}
+                                </button>
+                            {{ /unless }}
+                        {{ /foreach }}
+                    </div>
+
+                    <div class="flex md:hidden w-full mb-12" aria-hidden="false">
+                        {{ partial:components/forms/select selected="{ old.project_type ?? (fields.project_type.options | first_option) }" :options="fields.project_type.options" field_name="project_type" field_display="Project Type" /}}
+                    </div>
+
+                    <h3 class="text-2xl font-thin mb-5">{{ trans:forms.project_request.sections.budget }} <span data-budget-preview class="hidden md:inline">{{ fields.budget_range.options | first_option_value /}}</span></h3>
+
+                    {{ _optionCount = (fields.budget_range.options | count) - 1 /}}
+
+                    <div class="hidden md:flex flex-col space-y-2 mb-12" aria-hidden="true">
+                        <div>
+                            <input type="range" data-project-budget class="slider rounded-lg overflow-hidden appearance-none bg-pink-200 h-4 py-2 w-full" min="1" max="{{ _optionCount }}" value="1" step="1">
+                        </div>
+                        <div class="flex justify-between text-xs px-2">
+                            {{ loop from="1" :to="_optionCount" }}
+                                <span data-budget-stroke="{{ index }}" class="transition-all text-lg duration-700 {{ if first }}text-pink-500{{ else }}text-slate-500{{ /if }}">|</span>
+                            {{ /loop }}
+                        </div>
+                    </div>
+
+                    <div class="flex md:hidden w-full mb-12" aria-hidden="false">
+                        {{ partial:components/forms/select selected="{ old.budget_range ?? (fields.budget_range.options | first_option) }" :options="fields.budget_range.options" field_name="budget_range" field_display="Budget Range" /}}
+                    </div>
+                {{ /get_blueprint }}
+
+                <h3 class="text-2xl font-thin mb-5">{{ trans:forms.project_request.sections.contact }}</h3>
+
+                <div class="grid grid-cols-2 gap-4 mb-12">
+                    {{ partial:components/forms/input field_name="business_name" field_display="{{trans:forms.project_request.fields.business_name}}" /}}
+                    {{ partial:components/forms/input field_name="contact_name" field_display="{{trans:forms.project_request.fields.contact_name}}" /}}
+                    {{ partial:components/forms/input field_name="email_address" type="email" field_display="{{trans:forms.project_request.fields.email_address}}" /}}
+                    {{ partial:components/forms/input field_name="phone_number" type="tel" field_display="{{trans:forms.project_request.fields.phone_number}}" /}}
+                </div>
+
+                <h3 class="text-2xl font-thin mb-5">{{ trans:forms.project_request.sections.additional }}</h3>
+
+                <div class="mb-6">
+                    {{ partial:components/forms/textarea field_name="additional_information" field_display="{{trans:forms.project_request.fields.project_details}}" /}}
+                    {{ partial:components/forms/honeypot /}}
+                </div>
+
+                <div class="flex justify-end">
+                    <button type="submit" class="shadow-btn border-2 border-slate-800 text-slate-800 py-3 px-6 rounded-md font-semibold hover:bg-accent-color-hover hover:font-semibold">{{ trans:forms.project_request.submit }}</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

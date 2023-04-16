@@ -1,0 +1,44 @@
+title: 'Site Settings'
+data:
+  site_name: 'The Agency'
+  about_us_content:
+    -
+      type: paragraph
+      content:
+        -
+          type: text
+          text: 'Our mission is to revolutionize the digital landscape by providing unparalleled creative and strategic solutions that empower businesses to thrive in an ever-evolving digital world.'
+  contact_information:
+    -
+      id: lg826nxp
+      label: Email
+      contact_value: info@example.com
+    -
+      id: lg828n3d
+      label: Phone
+      contact_value: '+1 (555) 123-4567'
+    -
+      id: lg828nug
+      label: Address
+      contact_value: '123 Main St, City, Country'
+  social_media_profiles:
+    -
+      id: lg82k0g4
+      profile_name: Facebook
+      profile_url: 'https://www.facebook.com/'
+      profile_image: social_icons/facebook.svg
+    -
+      id: lg82k9zd
+      profile_name: Twitter
+      profile_url: 'https://twitter.com/'
+      profile_image: social_icons/twitter.svg
+    -
+      id: lg82kiot
+      profile_name: Twitch
+      profile_url: 'https://www.twitch.tv/'
+      profile_image: social_icons/twitch.svg
+    -
+      id: lg82kui2
+      profile_name: YouTube
+      profile_url: 'https://www.youtube.com/'
+      profile_image: social_icons/youtube.svg

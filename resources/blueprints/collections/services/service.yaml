@@ -1,0 +1,73 @@
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: title
+        field:
+          type: text
+          required: true
+          validate:
+            - required
+      -
+        handle: content
+        field:
+          type: markdown
+          localizable: true
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: slug
+        field:
+          type: slug
+          localizable: true
+  service_details:
+    display: 'Service Details'
+    fields:
+      -
+        handle: marketing_blurb
+        field:
+          antlers: false
+          display: 'Marketing Blurb'
+          type: textarea
+          icon: textarea
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+      -
+        handle: service_icon
+        field:
+          mode: list
+          container: assets
+          folder: icons
+          restrict: false
+          allow_uploads: true
+          show_filename: true
+          max_files: 1
+          display: Icon
+          type: assets
+          icon: assets
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+      -
+        handle: service_stat_percent
+        field:
+          display: 'Service Stat Percent'
+          type: integer
+          icon: integer
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+      -
+        handle: service_stat_blurb
+        field:
+          antlers: false
+          display: 'Service Stat Blurb'
+          type: textarea
+          icon: textarea
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+title: Service

@@ -165,6 +165,7 @@ The blueprint for the Portfolio page contains similar fields.
 **Home**: The blueprint for the home page
 
 | Field | Description |
+|---|---|
 | Title | The page's title |
 | Content | A replicator field that contains various sets that can appear on the home page |
 
@@ -181,6 +182,15 @@ The home page's template can be found at `resources/views/pages/home.antlers.htm
 The `type` variable is provided by each set within the Replicator field (this is also true for Bard fields with sets!). The `{{ partial:if_exists }}` Tag will load one of the partials within the `resources/views/components/home` directory, if a match exists.
 
 There are many other blueprints, such as those that contain blog post entries and project request submissions. These are fairly typical blueprints, and can explored within the Control Panel, or by reading through the YAML files.
+
+### Global Sets
+
+This Starter Kit includes a single Global Set (`site_settings`). This set is used to configure the following:
+
+* Site Name: The name that will be used across the site, including in the header and title,
+* Footer / About Us: The text that will appear in the footer
+* Footer / Contact Information: A list of contact information that will appear in the footer, such as email, phone, and physical address
+* Social Media Profiles: A list of social media profiles and links that will appear in the footer
 
 ## Resources
 

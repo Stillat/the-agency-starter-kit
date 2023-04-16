@@ -196,13 +196,13 @@ This Starter Kit includes a single Global Set (`site_settings`). This set is use
 
 This Starter Kit makes use of a number of custom graphics, as well as those from the following sources:
 
-* Header SVG graphics came from unDraw: https://undraw.co/
-* SVG icons (social, project board icons, etc.) came from Feather: https://feathericons.com/
-* The "Board" icon used in the custom Control Panel navigation menu item is from Streamline's Regular icon set: https://www.streamlinehq.com/icons/legacy-streamline-regular
-* Sample images are from Unsplash: https://unsplash.com/
-* Customer profile images used for testimonials were generated using Lorem Faces: https://loremfaces.com/
-* Favicon assets generated using https://realfavicongenerator.net/
-* The Project Board view components was adapted from this example found on Code Sandbox: https://codesandbox.io/s/animated-draggable-kanban-board-with-tailwind-and-vue-1ry0p
+* Header SVG graphics came from unDraw: [https://undraw.co/](https://undraw.co/)
+* SVG icons (social, project board icons, etc.) came from Feather: [https://feathericons.com/](https://feathericons.com/)
+* The "Board" icon used in the custom Control Panel navigation menu item is from Streamline's Regular icon set: [https://www.streamlinehq.com/icons/legacy-streamline-regular](https://www.streamlinehq.com/icons/legacy-streamline-regular)
+* Sample images are from Unsplash: [https://unsplash.com/](https://unsplash.com/)
+* Customer profile images used for testimonials were generated using Lorem Faces: [https://loremfaces.com/](https://loremfaces.com/)
+* Favicon assets generated using [https://realfavicongenerator.net/](https://realfavicongenerator.net/)
+* The Project Board view components was adapted from this example found on Code Sandbox: [https://codesandbox.io/s/animated-draggable-kanban-board-with-tailwind-and-vue-1ry0p](https://codesandbox.io/s/animated-draggable-kanban-board-with-tailwind-and-vue-1ry0p)
 
 
 ## License

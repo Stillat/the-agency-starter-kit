@@ -8,10 +8,22 @@ use Statamic\Facades\GlobalSet;
 use Statamic\Facades\Site;
 use Statamic\Tags\Tags;
 
+/**
+ * The SiteTitle Tag is used to generate the title
+ * that appears in the <title> tag of each page.
+ * A custom Tag was used to simplify the logic
+ * within the Antlers template itself (some
+ * things are just easier in PHP 🙂).
+ */
 class SiteTitle extends Tags
 {
     public function index()
     {
+        // Returns the Site's name from the site_settings
+        // Global Set. This is used as the default title
+        // if we are on the homepage, as well as the
+        // final part of the title if we are on a nested
+        // page (e.g. "Blog Post / The Buzz / The Agency").
         $siteName = GlobalSet::findByHandle('site_settings')
                         ->inCurrentSite()->get('site_name');
 

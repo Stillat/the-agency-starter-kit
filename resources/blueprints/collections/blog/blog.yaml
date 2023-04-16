@@ -63,21 +63,4 @@ sections:
           required: true
           validate:
             - required
-  'META Fields':
-    display: 'META Fields'
-    fields:
-      -
-        handle: meta_title
-        field:
-          type: text
-          display: Title
-          instructions: 'The title that will be used in the meta tag. If none is provided, the entry title will be used.'
-          width: 100
-      -
-        handle: meta_description
-        field:
-          type: textarea
-          display: Description
-          instructions: 'The description that will be used in the meta tag.'
-          width: 100
 title: Blog

@@ -39,6 +39,12 @@ class RouteServiceProvider extends ServiceProvider
         $this->configureRateLimiting();
 
         Statamic::pushCpRoutes(function () {
+            // Include our routes/cp.php file to make
+            // it easier to manage our Control Panel
+            // routes in a separate file. By including
+            // that file as this point, we can be
+            // sure that they are loaded at the
+            // correct time when Statamic loads.
             require_once base_path('routes/cp.php');
         });
 

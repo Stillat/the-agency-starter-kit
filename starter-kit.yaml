@@ -40,4 +40,4 @@ export_paths:
   - tailwind.config.js
   - webpack.mix.js
 dependencies:
-  stillat/antlers-layouts: '1.*'
+  stillat/antlers-layouts: '2.*'

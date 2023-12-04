@@ -20,6 +20,7 @@ export_paths:
   - resources/js
   - resources/css/cp.css
   - resources/css/site.css
+  - resources/css/tailwind.css
   - resources/views
   - routes/web.php
   - routes/cp.php

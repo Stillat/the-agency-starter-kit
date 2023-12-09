@@ -18,7 +18,7 @@ class GlobalFields
         return [
             // The key of each entry in this array will become
             // the section name within the Control Panel.
-            __('meta.section_name') => [
+            __('agency_meta.section_name') => [
                 // We can add existing Blueprint handles to the
                 // "exclude_blueprints" array to not have our
                 // dynamic fields added to the publish forms
@@ -29,14 +29,14 @@ class GlobalFields
                 'fields' => [
                     'meta_keywords' => [
                         'type' => 'text',
-                        'display' => __('meta.keywords'),
-                        'instructions' => __('meta.keyword_instructions'),
+                        'display' => __('agency_meta.keywords'),
+                        'instructions' => __('agency_meta.keyword_instructions'),
                         'width' => 100,
                     ],
                     'meta_description' => [
                         'type' => 'textarea',
-                        'display' => __('meta.description'),
-                        'instructions' => __('meta.description_instructions'),
+                        'display' => __('agency_meta.description'),
+                        'instructions' => __('agency_meta.description_instructions'),
                         'width' => 100,
                     ],
                 ],

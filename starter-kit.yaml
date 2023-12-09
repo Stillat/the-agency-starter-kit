@@ -8,9 +8,9 @@ export_paths:
   - app/Projects
   - app/Tags
   - app/Utilities
-  - lang/en/forms.php
-  - lang/en/meta.php
-  - lang/en/site.php
+  - lang/en/agency_forms.php
+  - lang/en/agency_meta.php
+  - lang/en/agency_site.php
   - content
   - config/filesystems.php
   - config/statamic/assets.php

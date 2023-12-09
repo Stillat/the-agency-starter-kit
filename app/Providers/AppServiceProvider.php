@@ -40,7 +40,7 @@ class AppServiceProvider extends ServiceProvider
         Nav::extend(function ($nav) {
             // Adds the "Project Board" item to the
             // "Content" section of the nav.
-            $nav->content(__('site.project_board'))
+            $nav->content(__('agency_site.project_board'))
                 // The route method accepts the route
                 // name that we want to link to. This
                 // route is defined in routes/cp.php.

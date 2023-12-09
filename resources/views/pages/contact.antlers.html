@@ -21,15 +21,15 @@ svg_icons:
         #}}
         {{ if {session:success} }}
             <div class="mx-4 bg-green-100 mb-4 border border-green-400 text-green-700 px-6 py-3 rounded relative" role="alert">
-                <strong class="font-semibold">{{ trans:forms.project_request.success_title }}</strong>
-                <span class="block sm:inline">{{ trans:forms.project_request.success_message }}</span>
+                <strong class="font-semibold">{{ trans:agency_forms.project_request.success_title }}</strong>
+                <span class="block sm:inline">{{ trans:agency_forms.project_request.success_message }}</span>
             </div>
         {{ /if }}
 
         <form method="POST" action="{{ route:project-request }}" id="projectRequestForm">
             {{ csrf_field }}
             <div class="p-6">
-                <h3 class="text-2xl font-thin mb-5">{{ trans:forms.project_request.sections.project }}</h3>
+                <h3 class="text-2xl font-thin mb-5">{{ trans:agency_forms.project_request.sections.project }}</h3>
 
                 {{ get_blueprint handle="collections/project_requests/project_request" }}
                     <script>
@@ -57,7 +57,7 @@ svg_icons:
                         {{ partial:components/forms/select selected="{ old.project_type ?? (fields.project_type.options | first_option) }" :options="fields.project_type.options" field_name="project_type" field_display="Project Type" /}}
                     </div>
 
-                    <h3 class="text-2xl font-thin mb-5">{{ trans:forms.project_request.sections.budget }} <span data-budget-preview class="hidden md:inline">{{ fields.budget_range.options | first_option_value /}}</span></h3>
+                    <h3 class="text-2xl font-thin mb-5">{{ trans:agency_forms.project_request.sections.budget }} <span data-budget-preview class="hidden md:inline">{{ fields.budget_range.options | first_option_value /}}</span></h3>
 
                     {{ _optionCount = (fields.budget_range.options | count) - 1 /}}
 
@@ -77,7 +77,7 @@ svg_icons:
                     </div>
                 {{ /get_blueprint }}
 
-                <h3 class="text-2xl font-thin mb-5">{{ trans:forms.project_request.sections.contact }}</h3>
+                <h3 class="text-2xl font-thin mb-5">{{ trans:agency_forms.project_request.sections.contact }}</h3>
 
                 <div class="grid grid-cols-2 gap-4 mb-12">
                     {{ partial:components/forms/input field_name="business_name" field_display="{{trans:forms.project_request.fields.business_name}}" /}}
@@ -86,7 +86,7 @@ svg_icons:
                     {{ partial:components/forms/input field_name="phone_number" type="tel" field_display="{{trans:forms.project_request.fields.phone_number}}" /}}
                 </div>
 
-                <h3 class="text-2xl font-thin mb-5">{{ trans:forms.project_request.sections.additional }}</h3>
+                <h3 class="text-2xl font-thin mb-5">{{ trans:agency_forms.project_request.sections.additional }}</h3>
 
                 <div class="mb-6">
                     {{ partial:components/forms/textarea field_name="additional_information" field_display="{{trans:forms.project_request.fields.project_details}}" /}}
@@ -94,7 +94,7 @@ svg_icons:
                 </div>
 
                 <div class="flex justify-end">
-                    <button type="submit" class="shadow-btn border-2 border-slate-800 text-slate-800 py-3 px-6 rounded-md font-semibold hover:bg-accent-color-hover hover:font-semibold">{{ trans:forms.project_request.submit }}</button>
+                    <button type="submit" class="shadow-btn border-2 border-slate-800 text-slate-800 py-3 px-6 rounded-md font-semibold hover:bg-accent-color-hover hover:font-semibold">{{ trans:agency_forms.project_request.submit }}</button>
                 </div>
             </div>
         </form>

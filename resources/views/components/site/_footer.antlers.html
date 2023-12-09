@@ -12,7 +12,7 @@
                     <div class="prose">{{ about_us_content /}}</div>
                 </div>
                 <div class="space-y-4">
-                    <h3 class="text-lg font-semibold">{{ trans:site.footer.contact_information }}</h3>
+                    <h3 class="text-lg font-semibold">{{ trans:agency_site.footer.contact_information }}</h3>
                     <ul>
                         {{ contact_information }}
                             <li><strong>{{ label }}</strong>: {{ contact_value }}</li>
@@ -20,7 +20,7 @@
                     </ul>
                 </div>
                 <div class="space-y-4">
-                    <h3 class="text-lg font-semibold">{{ trans:site.footer.follow_us }}</h3>
+                    <h3 class="text-lg font-semibold">{{ trans:agency_site.footer.follow_us }}</h3>
 
                     <div class="flex items-center">
                         {{ social_media_profiles }}
@@ -32,7 +32,7 @@
                 </div>
             </div>
             <div class="text-center pt-8 text-slate-500">
-                <p>&copy; {{ now | format('Y') }} {{ site_name /}}. {{ trans:site.footer.all_rights_reserved }}</p>
+                <p>&copy; {{ now | format('Y') }} {{ site_name /}}. {{ trans:agency_site.footer.all_rights_reserved }}</p>
             </div>
         </div>
     {{ /site_settings }}

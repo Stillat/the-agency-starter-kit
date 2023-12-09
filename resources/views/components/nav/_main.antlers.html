@@ -26,14 +26,14 @@
                                              border-slate-800 text-slate-800 py-3
                                              px-6 rounded-md font-semibold {{ if segment_1 == 'buzz-words' }}hover:bg-accent-color-blue{{ else }}hover:bg-accent-color{{ /if }}
                                              hover:font-semibold">
-        {{ trans:site.get_started }}
+        {{ trans:agency_site.get_started }}
     </a>
 </div>
 <div class="hidden pt-4 text-slate-400" id="responsive-nav">
     <div class="flex justify-start items-center">
         <ul class="w-full text-center space-y-2">
             {{ capture:menu /}}
-            <li><a href="{{ link to='contact' }}" class="text-gray-900 {{ if is_current || is_parent }}font-semibold{{ /if }} hover:text-gray-800">{{ trans:site.get_started }}</a></li>
+            <li><a href="{{ link to='contact' }}" class="text-gray-900 {{ if is_current || is_parent }}font-semibold{{ /if }} hover:text-gray-800">{{ trans:agency_site.get_started }}</a></li>
         </ul>
     </div>
 </div>
